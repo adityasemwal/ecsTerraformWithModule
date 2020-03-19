@@ -1,0 +1,4 @@
+resource "aws_key_pair" "mykeypair"{
+  key_name = "adikey"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHLBDx5JsvJaaMWtRiWAFxtBcHwQ6naGZIiQAXGLF/O2qq3PXZVO98L59t3+EEofBlxTAF63dMnO3lZrA9aIApk/Mj9GbZplgm20UMpg1o6FCBCezqaCxCNLL5GPS9sSgmSiuEsQkbqYrhbO3Uk/JggmB1DGA7anqIm0Kv59wu7SniVpRZH0VxwobZixfLuxlGpUIe1pYmwSjTUsyhsOgKcDpyzc46OTgCgmYbvlmLFEE4H/hW9GLOL3AA0IADH2l00xBDC8h8gaHI3IezmdpqUIPkSRbbf+pp0r5XrF5RiHaNANUAoQtMwN/C+z9Hhvh5f3itViZ45fkwqN83hfxx root@e644be7e6ee6"
+}
