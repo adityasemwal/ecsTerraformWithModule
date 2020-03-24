@@ -4,10 +4,10 @@
     "memory": 256,
     "name": "terraform-myapp",
     "cpu": 256,
-    "image": "${REPOSITORY_URL}:latest",
+    "image": "${REPOSITORY_URL}:1",
     "portMappings": [
         {
-            "containerPort": 80,
+            "containerPort": 8080,
             "hostPort": 3000
         }
     ]

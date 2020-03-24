@@ -3,7 +3,7 @@
 data "template_file" "myapp-task-definition-template" {
   template = file("templates/app.json.tpl")
   vars = {
-    REPOSITORY_URL = "nginx"
+    REPOSITORY_URL = "adityasemwal/javajmx"
   }
 }
 
