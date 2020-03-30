@@ -11,7 +11,7 @@ resource "aws_launch_configuration" "ecs-example-launchconfig" {
   key_name             = aws_key_pair.mykeypair.key_name
   iam_instance_profile = aws_iam_instance_profile.ecs-ec2-role.id 
   security_groups      = [aws_security_group.ecs-securitygroup.id]
-  user_data            = "#!/bin/bash\necho 'ECS_CLUSTER=Terraform-Aditya' > /etc/ecs/ecs.config"
+  user_data            = "#!/bin/bash\necho 'ECS_CLUSTER=Terraform-Aditya' > /etc/ecs/ecs.config\ndocker run  --volume=/:/rootfs:ro  --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --publish=8085:8080 --detach=true --name=cadvisor --privileged=true --volume=/cgroup:/cgroup:ro  google/cadvisor:v0.24.1"
   lifecycle {
     create_before_destroy = true
   }

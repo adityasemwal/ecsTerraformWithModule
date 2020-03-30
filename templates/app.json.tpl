@@ -9,6 +9,10 @@
         {
             "containerPort": 8080,
             "hostPort": 3000
+        },
+        {
+            "containerPort": 8081,
+            "hostPort": 3001
         }
     ]
   }

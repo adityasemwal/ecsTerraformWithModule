@@ -11,3 +11,12 @@ variable "AWS_REGION" {
 variable "AWS_INSTANCE" {
 }
 
+variable "ports"{
+  type = map(list(string))
+  default = {
+    22 = ["0.0.0.0/0"]
+    3000 = ["0.0.0.0/0"]
+    8081 = ["0.0.0.0/0"]
+    8085 = ["0.0.0.0/0"]
+  }
+}

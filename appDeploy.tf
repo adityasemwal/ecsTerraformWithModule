@@ -54,7 +54,7 @@ resource "aws_ecs_service" "myapp-service" {
   load_balancer {
     elb_name       = aws_elb.myapp-elb.name
     container_name = "terraform-myapp"
-    container_port = 80
+    container_port = 8080
   }
   lifecycle {
     ignore_changes = [task_definition]

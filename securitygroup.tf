@@ -8,31 +8,16 @@ resource "aws_security_group" "ecs-securitygroup" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  dynamic "ingress"{
+    for_each = var.ports
+    content{
+      from_port = ingress.key
+      to_port = ingress.key
+      protocol = "tcp"
+      cidr_blocks = ingress.value
+    }
+  }
 
-  ingress {
-    from_port       = 3000
-    to_port         = 3000
-    protocol        = "tcp"
-    security_groups = [aws_security_group.myapp-elb-securitygroup.id]
-  }
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  ingress {
-    from_port   = 8080
-    to_port     = 8080
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  ingress {
-    from_port   = 8081
-    to_port     = 8081
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
   tags = {
     Name = "terraform-ecs"
   }
